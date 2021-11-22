@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+		document.addEventListener("DOMContentLoaded", ()=> {
+			let container = document.querySelector("#container");
+			let cont = 0;
+			container.addEventListener("click", () => {
+				/*------------Control de sus colores--------------------*/
+				if(cont == 0)
+				{
+					cont = 1;
+					container.style.backgroundColor = "green";
+				}
+				else if(cont == 1)
+				{
+					cont = 2;
+					container.style.backgroundColor = "blue";
+				}
+				else if(cont == 2)
+				{
+					cont = 0;
+					container.style.backgroundColor = "crimson";
+				}
+				/*------------------------------------------------------*/
+				/*-------------Control tamaño en click------------------*/
+				if (parseFloat(container.style.height) < 420)
+				{
+				container.style.height = (parseFloat(container.style.height) + 10) + "px";
+				container.style.width = (parseFloat(container.style.width) + 10) + "px";
+				}
+				else
+				{
+					container.style.height = 200 + "px";
+					container.style.width = 200 + "px";
+				}
+				/*------------------------------------------------------*/
+			})
+			/*-----------------Control de tamaño hover------------------*/
+			container.addEventListener("mouseout", function( event ) {
+				if (parseFloat(container.style.height) > 200)
+				{
+					container.style.height = (parseFloat(container.style.height) - 5) + "px";
+					container.style.width = (parseFloat(container.style.width) - 5) + "px";
+				}
+				/*------------Control de sus colores--------------------*/
+				if(cont == 0)
+				{
+					cont = 2;
+					container.style.backgroundColor = "blue";
+				}
+				else if(cont == 1)
+				{
+					cont = 0;
+					container.style.backgroundColor = "crimson";
+				}
+				else if(cont == 2)
+				{
+					cont = 1;
+					container.style.backgroundColor = "green";
+				}
+				/*------------------------------------------------------*/
+			});
+			
+			/*----------------------------------------------------------*/
+		})
+	</script>
+	<title>Balloon</title>
+</head>
+<body>
+	<div id="container" style="	border-radius: 100%; width: 200px; height: 200px; background-color: crimson;"></div>
+</body>
+</html>

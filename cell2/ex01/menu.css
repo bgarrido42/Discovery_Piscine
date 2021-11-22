@@ -1,0 +1,45 @@
+ul{
+	display: none;
+}
+
+input:checked  ~ ul{
+	display:block;
+}
+input {
+	display: none;
+}
+label {
+	box-sizing: border-box;
+	display: inline-block;
+	border: 1px solid black;
+	border-radius: 5px;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	font-weight: bold;
+	text-align: center;
+	user-select: none;
+  }
+#FirstLi {
+	display: block;
+	background: lightgrey;
+	margin: 0;
+	padding: 5px;
+	list-style: none;
+	border-bottom: 1px solid grey;
+}
+
+nav ul li:hover ul{
+	display: block;
+	background-color: darkgray;
+}
+nav ul li ul li{
+	margin: 0;
+	background-color: lightgray;
+	list-style: none;
+	padding: 5px;
+	border: 1px solid black;
+}
+nav ul li ul li:hover{
+	background-color: crimson;
+}
